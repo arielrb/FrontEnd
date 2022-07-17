@@ -13,6 +13,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 //Traemos las barras circulares
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { HabilidadesComponent } from './components/habilidades/habilidades.compo
     AcercaDeComponent,
     ExperienciaLaboralComponent,
     EducacionComponent,
-    HabilidadesComponent
+    HabilidadesComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
