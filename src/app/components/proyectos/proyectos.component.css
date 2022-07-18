@@ -1,4 +1,13 @@
-img {
-    width: 50%;
-    height: 50%;
+.row{
+    padding: 20px;
 }
+
+.contenedor{
+    width: auto;
+}
+
+.texto, .imagen {
+    display: inline-block;
+    text-align: justify;
+}
+
