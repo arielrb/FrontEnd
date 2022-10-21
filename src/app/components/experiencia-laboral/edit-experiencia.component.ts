@@ -36,4 +36,8 @@ export class EditExperienciaComponent implements OnInit {
     )
   }
 
+  uploadImage($event: any) 
+  {
+
+  }
 }

@@ -19,6 +19,13 @@ import { LoginComponent } from './components/login/login.component';
 import { interceptorProvider } from './servicios/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia-laboral/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia-laboral/edit-experiencia.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
+import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
+import { NewEducacionComponent } from './components/educacion/new-educacion.component';
+import { NewHabilidadComponent } from './components/habilidades/new-habilidad.component';
+import { EditHabilidadComponent } from './components/habilidades/edit-habilidad.component';
+import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +41,14 @@ import { EditExperienciaComponent } from './components/experiencia-laboral/edit-
     HomeComponent,
     LoginComponent,
     NewExperienciaComponent,
-    EditExperienciaComponent
+    EditExperienciaComponent,
+    EditAcercaDeComponent,
+    EditEducacionComponent,
+    NewEducacionComponent,
+    NewHabilidadComponent,
+    EditHabilidadComponent,
+    EditProyectoComponent,
+    NewProyectoComponent
   ],
   imports: [
     FormsModule,

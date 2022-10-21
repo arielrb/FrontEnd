@@ -1,19 +1,19 @@
-<div class="container" *ngIf="expLab">
+<div class="container" *ngIf="proyecto">
     <div class="row">
         <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
             <div class="form-group">
-                <label for="NombreExp">Nombre de la organización</label>
-                <input type="text" class="form-control" id="nombreExp" [(ngModel)]="expLab.nombreExp" name="nombreExp"
+                <label for="NombreExp">Nombre del proyecto</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="proyecto.nombre" name="nombre"
                     required>
             </div>
             <div class="form-group">
                 <label for="descripcionExp">Descripcion</label>
-                <input type="text" class="form-control" id="descripcionExp" [(ngModel)]="expLab.descripcionExp"
-                    name="descripcionExp" required>
+                <input type="text" class="form-control" id="descripcion" [(ngModel)]="proyecto.descripcion"
+                    name="descripcion" required>
             </div>
             <div>
                 <label for="img">Imagen</label>
-                <input type="file" class="form-control" id="imagen" [(ngModel)]="expLab.img" name="img"
+                <input type="file" class="form-control" id="imagen" [(ngModel)]="proyecto.img" name="img"
                     required (change)="uploadImage($event)" accept=".jpeg, .png, .jpg">
             </div>
             <button class="btn btn-success">

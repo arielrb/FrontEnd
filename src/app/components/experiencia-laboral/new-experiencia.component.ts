@@ -11,13 +11,14 @@ import { SExpLaboralService } from 'src/app/servicios/s-exp-laboral.service';
 export class NewExperienciaComponent implements OnInit {
   nombreExp: string = "";
   descripcionExp:string = "";
+  img:string = "";
   constructor(private sExp: SExpLaboralService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   onCreate():void{
-    const expe = new ExpLaboral(this.nombreExp,this.descripcionExp);
+    const expe = new ExpLaboral(this.nombreExp,this.descripcionExp, this.img);
     this.sExp.save(expe).subscribe
     (
       data =>
@@ -30,5 +31,9 @@ export class NewExperienciaComponent implements OnInit {
       this.router.navigate([""]);
      }
     )
+  }
+  uploadImage($event: any) 
+  {
+
   }
 }

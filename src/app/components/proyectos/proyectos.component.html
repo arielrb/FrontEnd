@@ -2,14 +2,18 @@
     <h1>Proyectos</h1>>
 </div>
 <div class="col-lg-11">
+    <div class="col-lg-1">
+        <button type="button" class="btn btn-primary" routerLink="/nuevoproyecto" *ngIf="isLogged">Agregar
+            Experiencia</button>
+    </div>
     <table class="table">
         <tbody>
             <tr *ngFor="let item of proyecto ">
                 <td>{{item.nombre}}</td>
                 <td>{{item.descripcion}}</td>
                 <td>{{item.img}}</td>
-                <td *ngIf="isLogged"><button class="btn btn-success"
-                        routerLink="/update/{{item.id}}">Editar</button></td>
+                <td *ngIf="isLogged"><button class="btn btn-success" routerLink="/update/{{item.id}}">Editar</button>
+                </td>
                 <td *ngIf="isLogged"><button class="btn btn-danger" (click)="Eliminar(item.id)">Borrar</button>
                 </td>
             </tr>
