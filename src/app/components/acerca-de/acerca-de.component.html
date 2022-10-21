@@ -1,6 +1,10 @@
-<div class=""row>
+<div class="row">
+    <div class="col-lg-1">
+        <button type="button" class="btn btn-primary" routerLink="/nuevaexp" *ngIf="isLogged">Agregar
+            Experiencia</button>
+    </div>
     <div>
-        <img src="../../../assets/Logos proyecto/yo!.png" id="Yo" alt=""
+        <img src={{persona.img}} id="Yo" alt=""
         class="img-fluid">
     </div>
     <div>
@@ -9,9 +13,6 @@
     </div>
     <span>
         <h1>Acerca de mi</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Corrupti non dignissimos beatae debitis quisquam repellat eveniet recusandae.
-        Quia autem eligendi nesciunt, recusandae pariatur sequi id maxime, a suscipit cupiditate
-        fugiat.</p>
+        <p>{{persona.descripcion}}</p>
     </span>
 </div>

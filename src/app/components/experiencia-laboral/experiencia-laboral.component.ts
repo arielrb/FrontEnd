@@ -13,7 +13,7 @@ export class ExperienciaLaboralComponent implements OnInit {
   constructor(private sExp: SExpLaboralService, private tokenService: TokenService) {}
 
   isLogged = false;
-
+ 
   ngOnInit(): void {
     this.cargarExp();
     if(this.tokenService.getToken()){

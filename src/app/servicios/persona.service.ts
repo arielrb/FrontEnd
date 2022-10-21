@@ -8,11 +8,18 @@ import { Persona } from '../model/Persona.model';
 export class PersonaService 
 {
   //Los metodos despues acceden al crud
-  URL = "http://localhost:8080/personas/"
-  constructor(private http: HttpClient) {}
-    //EL observable para que es?
-    public GetPersona(): Observable<Persona>
-    {
-      return this.http.get<Persona>(this.URL + 'traer/perfil');
-    }
+  URL = "http://localhost:8080/MiPersona/"
+  constructor(private httpClient: HttpClient) { }
+
+  public lista():Observable<Persona[]>{
+    return this.httpClient.get<Persona[]>(this.URL + '/lista');
+  }
+  //Detalle! comillas simples inclinadas hacia la derecha (son para el path variable)
+  public detail(id:number): Observable<Persona>{
+    return this.httpClient.get<Persona>(this.URL + `/detail/${id}`)
+  }
+  //Solo update porque no quiero crear mas personas
+  public update(id:number, objeto: Persona): Observable<any>{
+    return this.httpClient.put<any>(this.URL + `/update/${id}`,objeto);
+  } 
 }

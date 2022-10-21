@@ -1,7 +1,8 @@
 <div class="row">
     <h1>Experiencia Laboral</h1>>
     <div class="col-lg-1">
-        <button type="button" class="btn btn-primary"  routerLink="/nuevaexp" *ngIf="isLogged">Agregar Experiencia</button>
+        <button type="button" class="btn btn-primary" routerLink="/nuevaexp" *ngIf="isLogged">Agregar
+            Experiencia</button>
     </div>
     <div class="col-lg-11">
         <table class="table">
@@ -9,11 +10,13 @@
                 <tr *ngFor="let experiencia of expLab">
                     <td>{{experiencia.nombreExp}}</td>
                     <td>{{experiencia.descripcionExp}}</td>
-                    <td *ngIf="isLogged"><button class="btn btn-success" routerLink="/editarexp/{{experiencia.id}}">Editar</button></td>
-                    <td *ngIf="isLogged"><button class="btn btn-danger" (click)="Eliminar(experiencia.id)">Borrar</button></td>
+                    <td *ngIf="isLogged"><button class="btn btn-success"
+                            routerLink="/editarexp/{{experiencia.id}}">Editar</button></td>
+                    <td *ngIf="isLogged"><button class="btn btn-danger"
+                            (click)="Eliminar(experiencia.id)">Borrar</button></td>
                 </tr>
             </tbody>
         </table>
 
-</div>
+    </div>
 </div>
