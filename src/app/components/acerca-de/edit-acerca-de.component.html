@@ -18,6 +18,10 @@
                 <input type="file" class="form-control" id="imagen de perfil" [(ngModel)]="persona.img" name="img"required (change)="uploadImage($event)"
                 accept=".jpeg, .png, .jpg">
             </div>
+            <div>
+                <img src={{servicioImagen.url}} width="200px"
+                class="img-fluid">
+            </div>
             <button class="btn btn-success">
                 Editar
             </button>

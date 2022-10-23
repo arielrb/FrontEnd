@@ -26,6 +26,9 @@ import { NewHabilidadComponent } from './components/habilidades/new-habilidad.co
 import { EditHabilidadComponent } from './components/habilidades/edit-habilidad.component';
 import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
 import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +58,9 @@ import { NewProyectoComponent } from './components/proyectos/new-proyecto.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider

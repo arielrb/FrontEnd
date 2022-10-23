@@ -15,7 +15,7 @@ const routes: Routes = [
 {path:'login',component:LoginComponent},
 {path:'nuevaexp',component:NewExperienciaComponent},
 {path:'editarexp/:id',component:EditExperienciaComponent},
-{path:'editarperfil/:id',component:EditAcercaDeComponent},
+{path:'MiPersona/:id',component:EditAcercaDeComponent},
 {path:'nuevaedu',component:NewEducacionComponent},
 {path:'editaredu/:id',component:EditEducacionComponent},
 {path:'nuevoproyecto',component:NewProyectoComponent},
