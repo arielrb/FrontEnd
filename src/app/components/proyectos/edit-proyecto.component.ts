@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-edit-proyecto',
@@ -11,9 +12,13 @@ import { ProyectosService } from 'src/app/servicios/proyectos.service';
 export class EditProyectoComponent implements OnInit {
 
   proyecto: Proyectos = null;
-  constructor(private servicio : ProyectosService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private servicio : ProyectosService, private activatedRoute: ActivatedRoute, private router: Router, private tokenService: TokenService) { }
 
+  isLogged = false;
   ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    }
     const id = this.activatedRoute.snapshot.params['id'];
     this.servicio.detail(id).subscribe(
       data => {
@@ -35,10 +40,5 @@ export class EditProyectoComponent implements OnInit {
         this.router.navigate([''])
       }
     )
-  }
-
-  uploadImage($event: any) 
-  {
-
   }
 }

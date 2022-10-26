@@ -1,6 +1,13 @@
+
 section{
-    background-color: tomato;
+    background-color: green;
 }
+
+#formulario{
+    background-color: blue;
+    
+}
+
 .bg-image-vertical {
     position: relative;
     overflow: hidden;

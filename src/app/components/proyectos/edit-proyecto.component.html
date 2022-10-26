@@ -1,3 +1,4 @@
+<div *ngIf="isLogged">
 <div class="container" *ngIf="proyecto">
     <div class="row">
         <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
@@ -11,17 +12,13 @@
                 <input type="text" class="form-control" id="descripcion" [(ngModel)]="proyecto.descripcion"
                     name="descripcion" required>
             </div>
-            <div>
-                <label for="img">Imagen</label>
-                <input type="file" class="form-control" id="imagen" [(ngModel)]="proyecto.img" name="img"
-                    required (change)="uploadImage($event)" accept=".jpeg, .png, .jpg">
-            </div>
             <button class="btn btn-success">
                 Editar
             </button>
-            <button class="btn btn-danger">
-                Eliminar
+            <button class="btn btn-info" routerLink="/">
+                Volver
             </button>
         </form>
     </div>
+</div>
 </div>

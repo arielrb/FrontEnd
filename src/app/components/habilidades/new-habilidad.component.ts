@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-new-habilidad',
@@ -12,9 +13,13 @@ export class NewHabilidadComponent implements OnInit {
   nombre: string = "";
   porcentaje:number;
   img:string = "";
-  constructor(private servicio: HabilidadesService, private router: Router) { }
+  constructor(private servicio: HabilidadesService, private router: Router, private tokenService: TokenService) { }
 
+  isLogged = false;
   ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    }
   }
 
   onCreate():void{

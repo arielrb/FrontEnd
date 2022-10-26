@@ -28,6 +28,7 @@ export class HabilidadesComponent implements OnInit {
     )
   }
   Eliminar(id?:number):void{
+    if(confirm("Seguro que querés eliminar esto?"))
     if(id != undefined){
       this.servicio.delete(id).subscribe(
         data => {

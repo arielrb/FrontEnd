@@ -1,27 +1,24 @@
-<div class="container" *ngIf="educacion">
-    <div class="row">
-        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-            <div class="form-group">
-                <label for="NombreExp">Nombre de la organización</label>
-                <input type="text" class="form-control" id="nombre" [(ngModel)]="educacion.nombre" name="nombreExp"
-                    required>
-            </div>
-            <div class="form-group">
-                <label for="descripcionExp">Descripcion</label>
-                <input type="text" class="form-control" id="descripcion" [(ngModel)]="educacion.descripcion"
-                    name="descripcionExp" required>
-            </div>
-            <div>
-                <label for="img">Imagen</label>
-                <input type="file" class="form-control" id="imagen" [(ngModel)]="educacion.img" name="img"
-                    required (change)="uploadImage($event)" accept=".jpeg, .png, .jpg">
-            </div>
-            <button class="btn btn-success">
-                Editar
-            </button>
-            <button class="btn btn-danger">
-                Eliminar
-            </button>
-        </form>
+<div *ngIf="isLogged">
+    <div class="container" *ngIf="educacion">
+        <div class="row">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="NombreExp">Nombre de la organización</label>
+                    <input type="text" class="form-control" id="nombre" [(ngModel)]="educacion.nombre" name="nombreExp"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionExp">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" [(ngModel)]="educacion.descripcion"
+                        name="descripcionExp" required>
+                </div>
+                <button class="btn btn-success">
+                    Editar
+                </button>
+                <button class="btn btn-info" routerLink="/">
+                    Volver
+                </button>
+            </form>
+        </div>
     </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-new-proyecto',
@@ -12,9 +13,13 @@ export class NewProyectoComponent implements OnInit {
   nombre: string = "";
   descripcion:string = "";
   img:string = "";
-  constructor(private servicio: ProyectosService, private router: Router) { }
+  constructor(private servicio: ProyectosService, private router: Router, private tokenService:TokenService) { }
 
+  isLogged = false;
   ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    }
   }
 
   onCreate():void{
@@ -31,9 +36,5 @@ export class NewProyectoComponent implements OnInit {
       this.router.navigate([""]);
      }
     )
-  }
-  uploadImage($event: any) 
-  {
-
   }
 }

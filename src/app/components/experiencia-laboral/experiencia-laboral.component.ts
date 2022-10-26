@@ -28,6 +28,7 @@ export class ExperienciaLaboralComponent implements OnInit {
     )
   }
   Eliminar(id?:number):void{
+    if(confirm("Seguro que querés eliminar esto?"))
     if(id != undefined){
       this.sExp.delete(id).subscribe(
         data => {

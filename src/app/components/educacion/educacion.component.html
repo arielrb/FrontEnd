@@ -3,7 +3,7 @@
 </div>
 <div class="col-lg-11">
     <div class="col-lg-1">
-        <button type="button" class="btn btn-primary" routerLink="/nuevaedu" *ngIf="isLogged">Agregar
+        <button type="button" class="btn btn-primary" routerLink="Educacion/crear" *ngIf="isLogged">Agregar
             Experiencia</button>
     </div>
     <table class="table">
@@ -11,8 +11,7 @@
             <tr *ngFor="let edu of educacion ">
                 <td>{{edu.nombre}}</td>
                 <td>{{edu.descripcion}}</td>
-                <td>{{edu.img}}</td>
-                <td *ngIf="isLogged"><button class="btn btn-success" routerLink="/update/{{edu.id}}">Editar</button>
+                <td *ngIf="isLogged"><button class="btn btn-success" routerLink="Educacion/update/{{edu.id}}">Editar</button>
                 </td>
                 <td *ngIf="isLogged"><button class="btn btn-danger" (click)="Eliminar(edu.id)">Borrar</button>
                 </td>

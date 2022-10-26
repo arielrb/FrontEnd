@@ -13,13 +13,13 @@ import { NewProyectoComponent } from './components/proyectos/new-proyecto.compon
 const routes: Routes = [
 {path:'',component:HomeComponent},
 {path:'login',component:LoginComponent},
-{path:'nuevaexp',component:NewExperienciaComponent},
-{path:'editarexp/:id',component:EditExperienciaComponent},
+{path:'ExperienciaLaboral/crear',component:NewExperienciaComponent},
+{path:'ExperienciaLaboral/update/:id',component:EditExperienciaComponent},
 {path:'MiPersona/:id',component:EditAcercaDeComponent},
-{path:'nuevaedu',component:NewEducacionComponent},
-{path:'editaredu/:id',component:EditEducacionComponent},
-{path:'nuevoproyecto',component:NewProyectoComponent},
-{path:'editarproyecto/:id',component:EditProyectoComponent},
+{path:'Educacion/crear',component:NewEducacionComponent},
+{path:'Educacion/update/:id',component:EditEducacionComponent},
+{path:'Proyectos/crear',component:NewProyectoComponent},
+{path:'Proyectos/update/:id',component:EditProyectoComponent},
 ];
 
 

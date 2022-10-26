@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExpLaboral } from 'src/app/model/ExpLaboral';
+import { ImagenService } from 'src/app/servicios/imagen.service';
 import { SExpLaboralService } from 'src/app/servicios/s-exp-laboral.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-edit-experiencia',
@@ -10,9 +12,13 @@ import { SExpLaboralService } from 'src/app/servicios/s-exp-laboral.service';
 })
 export class EditExperienciaComponent implements OnInit {
   expLab: ExpLaboral = null;
-  constructor(private sExp : SExpLaboralService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private sExp : SExpLaboralService, private activatedRoute: ActivatedRoute, private router: Router, private tokenService: TokenService) { }
 
+  isLogged = false;
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }
     const id = this.activatedRoute.snapshot.params['id'];
     this.sExp.detail(id).subscribe(
       data => {
@@ -34,10 +40,5 @@ export class EditExperienciaComponent implements OnInit {
         this.router.navigate([''])
       }
     )
-  }
-
-  uploadImage($event: any) 
-  {
-
   }
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/Persona.model';
 import { ImagenService } from 'src/app/servicios/imagen.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-edit-acerca-de',
@@ -12,9 +13,14 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class EditAcercaDeComponent implements OnInit {
 
   persona: Persona = null;
-  constructor(private servicio: PersonaService, private activatedRoute: ActivatedRoute, private router: Router, public servicioImagen: ImagenService) { }
+  constructor(private servicio: PersonaService, private activatedRoute: ActivatedRoute,
+     private router: Router, public servicioImagen: ImagenService, private tokenService:TokenService) { }
 
+  isLogged = false
   ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    }
     const id = this.activatedRoute.snapshot.params['id'];
     this.servicio.detail(id).subscribe(
       data => {
@@ -33,7 +39,7 @@ export class EditAcercaDeComponent implements OnInit {
       data => {
         this.router.navigate([''])
       }, err => {
-        alert("Error al modificar la experiencia laboral!");
+        alert("Error al modificar!");
         this.router.navigate([''])
       }
     )
