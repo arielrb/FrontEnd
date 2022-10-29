@@ -1,4 +1,11 @@
-.row {
-    background-color: white;
-    padding: 20px;
+*{
+    background-color: #2A314A;
+    margin-bottom: 0px;
+
+}
+.table{
+    color: white;
+}
+h1{
+    color: #87ABED;
 }

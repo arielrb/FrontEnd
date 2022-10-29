@@ -1,11 +1,13 @@
 
 section{
-    background-color: green;
+    background-color: #E2D7D1;
 }
 
 #formulario{
-    background-color: blue;
     
+    background-color: #ACA329;
+    border-color: black;
+    border-style: double;
 }
 
 .bg-image-vertical {

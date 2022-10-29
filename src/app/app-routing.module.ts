@@ -5,6 +5,8 @@ import { EditEducacionComponent } from './components/educacion/edit-educacion.co
 import { NewEducacionComponent } from './components/educacion/new-educacion.component';
 import { EditExperienciaComponent } from './components/experiencia-laboral/edit-experiencia.component';
 import { NewExperienciaComponent } from './components/experiencia-laboral/new-experiencia.component';
+import { EditHabilidadComponent } from './components/habilidades/edit-habilidad.component';
+import { NewHabilidadComponent } from './components/habilidades/new-habilidad.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
@@ -18,6 +20,8 @@ const routes: Routes = [
 {path:'MiPersona/:id',component:EditAcercaDeComponent},
 {path:'Educacion/crear',component:NewEducacionComponent},
 {path:'Educacion/update/:id',component:EditEducacionComponent},
+{path:'Habilidades/crear',component:NewHabilidadComponent},
+{path:'Habilidades/update/:id',component:EditHabilidadComponent},
 {path:'Proyectos/crear',component:NewProyectoComponent},
 {path:'Proyectos/update/:id',component:EditProyectoComponent},
 ];

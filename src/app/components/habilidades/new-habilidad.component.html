@@ -8,18 +8,14 @@
             <div class="form-group">
                 <label for="descripcion">Porcentaje</label>
                 <input for="number" class="form-control" id="descripcion" [(ngModel)]="porcentaje"
-                    name="descripcionExp" required>
+                    name="descripcion" required>
             </div>
-            <div>
-                <label for="img">Imagen</label>
-                <input type="file" class="form-control" id="imagen" [(ngModel)]="img" name="img"
-                    required (change)="uploadImage($event)" accept=".jpeg, .png, .jpg">
-            </div>
+
             <button class="btn btn-success">
-                Editar
+                Agregar
             </button>
-            <button class="btn btn-danger">
-                Eliminar
+            <button class="btn btn-info" routerLink="/">
+                Volver
             </button>
         </form>
     </div>

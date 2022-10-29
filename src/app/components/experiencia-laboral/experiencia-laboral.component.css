@@ -1,3 +1,9 @@
-div{
-    background-color: sandybrown;
+*{
+    background-color: #2A314A;
+}
+.table{
+    color: white;
+}
+h1{
+    color: #87ABED;
 }
