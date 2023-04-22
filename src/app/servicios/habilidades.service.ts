@@ -7,7 +7,7 @@ import { Habilidades } from '../model/habilidades';
   providedIn: 'root'
 })
 export class HabilidadesService {
-  URL = 'http://localhost:8080/Habilidades'
+  URL = 'https://ariel-restagno-barros.onrender.com/Habilidades'
   constructor(private httpClient: HttpClient) { }
 
   public lista():Observable<Habilidades[]>{

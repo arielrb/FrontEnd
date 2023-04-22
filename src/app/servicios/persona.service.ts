@@ -8,7 +8,7 @@ import { Persona } from '../model/Persona.model';
 export class PersonaService 
 {
   //Los metodos despues acceden al crud
-  URL = "http://localhost:8080/MiPersona"
+  URL = "https://ariel-restagno-barros.onrender.com/MiPersona"
   constructor(private httpClient: HttpClient) { }
 
   public lista():Observable<Persona[]>{

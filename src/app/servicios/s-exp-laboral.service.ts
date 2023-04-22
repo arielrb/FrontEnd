@@ -7,7 +7,7 @@ import { ExpLaboral } from '../model/ExpLaboral';
   providedIn: 'root'
 })
 export class SExpLaboralService {
-  expURL = 'http://localhost:8080/ExperienciaLaboral'
+  expURL = 'https://ariel-restagno-barros.onrender.com/ExperienciaLaboral'
   constructor(private httpClient: HttpClient) { }
 
   public lista():Observable<ExpLaboral[]>{
